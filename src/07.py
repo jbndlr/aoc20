@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+import os
+
+
+INPUT = os.path.abspath(os.path.join(__file__,
+        f'../../input/{os.path.splitext(os.path.basename(__file__))[0]}.txt'))
+
+
 class Bag:
     def __init__(self, raw):
         this, others = raw.split('contain')
@@ -56,8 +63,8 @@ def part_2(lookup):
 
 
 if __name__ == '__main__':
-    print('## Advent 05')
-    with open('input/01.txt', 'r') as fh:
+    print('## Advent 07')
+    with open(INPUT, 'r') as fh:
         data = [Bag(line.strip()) for line in fh]
 
     lookup = {}

@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
+import os
 import re
+
+
+INPUT = os.path.abspath(os.path.join(__file__,
+        f'../../input/{os.path.splitext(os.path.basename(__file__))[0]}.txt'))
+
 
 RE_YEAR = re.compile(r'^\d{4}$')
 RE_HEIGHT = re.compile(r'^\d{2,3}((in)|(cm))$')
@@ -82,7 +88,7 @@ if __name__ == '__main__':
     print('## Advent 04')
 
     data = []
-    with open('input/01.txt', 'r') as fh:
+    with open(INPUT, 'r') as fh:
         buf = []
         for line in fh:
             if line[0] == '\n':

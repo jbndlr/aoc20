@@ -1,5 +1,12 @@
 #!/bin/python3
 
+import os
+
+
+INPUT = os.path.abspath(os.path.join(__file__,
+        f'../../input/{os.path.splitext(os.path.basename(__file__))[0]}.txt'))
+
+
 def binsearch(value, data):
     if len(data) == 0: return False
     if len(data) == 1: return data[0] == value
@@ -77,7 +84,7 @@ def part_2(data):
 
 if __name__ == '__main__':
     print('## Advent 01')
-    with open('input/01.txt', 'r') as fh:
+    with open(INPUT, 'r') as fh:
         # Can we take sorted data as given? :roll:
         data = sorted([int(line.strip()) for line in fh])
 

@@ -1,5 +1,12 @@
 #!/bin/python3
 
+import os
+
+
+INPUT = os.path.abspath(os.path.join(__file__,
+        f'../../input/{os.path.splitext(os.path.basename(__file__))[0]}.txt'))
+
+
 class PasswordEntry:
     def __init__(self, raw):
         policy, char, entry = raw.split(' ')
@@ -35,7 +42,7 @@ def part_2(data):
 
 if __name__ == '__main__':
     print('## Advent 02')
-    with open('input/01.txt', 'r') as fh:
+    with open(INPUT, 'r') as fh:
         data = [PasswordEntry(line.strip()) for line in fh]
 
     part_1(data)

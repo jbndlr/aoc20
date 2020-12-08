@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
+import os
 from functools import reduce
+
+
+INPUT = os.path.abspath(os.path.join(__file__,
+        f'../../input/{os.path.splitext(os.path.basename(__file__))[0]}.txt'))
 
 
 def part_1(data):
@@ -37,7 +42,7 @@ def part_2(data):
 
 if __name__ == '__main__':
     print('## Advent 03')
-    with open('input/01.txt', 'r') as fh:
+    with open(INPUT, 'r') as fh:
         data = [line.strip() for line in fh]
 
     part_1(data)

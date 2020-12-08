@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
+import os
 from functools import reduce
+
+
+INPUT = os.path.abspath(os.path.join(__file__,
+        f'../../input/{os.path.splitext(os.path.basename(__file__))[0]}.txt'))
 
 
 class Group:
@@ -31,7 +36,7 @@ if __name__ == '__main__':
     print('## Advent 06')
 
     data = []
-    with open('input/01.txt', 'r') as fh:
+    with open(INPUT, 'r') as fh:
         buf = []
         for line in fh:
             if line[0] == '\n':
